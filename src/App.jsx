@@ -1,3 +1,5 @@
+
+import { useState } from 'react';
 import './App.css';
 
 const experience = [
@@ -466,22 +468,50 @@ function FocusIcon({ type }) {
 }
 
 function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  function closeMobileMenu() {
+    setIsMobileMenuOpen(false);
+  }
+
   return (
     <div className="portfolio">
       <header className="site-header">
         <div className="container nav-container">
-          <a className="brand" href="#home" aria-label="Saikou Camara home">
+          <a
+            className="brand"
+            href="#home"
+            aria-label="Saikou Camara home"
+            onClick={closeMobileMenu}
+          >
             SC<span>.</span>
           </a>
 
-          <nav className="main-nav" aria-label="Main navigation">
-            <a className="nav-link" href="#about">About</a>
-            <a className="nav-link" href="#skills">Skills</a>
-            <a className="nav-link" href="#experience">Experience</a>
-            <a className="nav-link" href="#projects">Projects</a>
-            <a className="nav-link" href="#presentations">Research</a>
-            <a className="nav-link" href="#interests">Interests</a>
-            <a className="nav-contact" href="#contact">Contact</a>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="main-navigation"
+            onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav
+            className={`main-nav${isMobileMenuOpen ? ' is-open' : ''}`}
+            id="main-navigation"
+            aria-label="Main navigation"
+          >
+            <a className="nav-link" href="#about" onClick={closeMobileMenu}>About</a>
+            <a className="nav-link" href="#skills" onClick={closeMobileMenu}>Skills</a>
+            <a className="nav-link" href="#experience" onClick={closeMobileMenu}>Experience</a>
+            <a className="nav-link" href="#projects" onClick={closeMobileMenu}>Projects</a>
+            <a className="nav-link" href="#presentations" onClick={closeMobileMenu}>Research</a>
+            <a className="nav-link" href="#interests" onClick={closeMobileMenu}>Interests</a>
+            <a className="nav-contact" href="#contact" onClick={closeMobileMenu}>Contact</a>
           </nav>
         </div>
       </header>
@@ -629,9 +659,10 @@ function App() {
 
               <p>
                 I am particularly interested in strengthening
-                evidence-informed decision-making through public and environmental health research.
-                My goal is to help translate public health data into
-                useful insights for policies, programmes and practice.
+                evidence-informed decision-making through public and
+                environmental health research. My goal is to help translate
+                public health data into useful insights for policies, programmes
+                and practice.
               </p>
             </div>
           </div>
