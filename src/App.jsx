@@ -1,192 +1,163 @@
-
 import './App.css';
 
 const experience = [
   {
-    period: '15 December 2022 – Present',
     location: 'Environmental Health Program',
-    organisation:
-      'Directorate of Public Health Services, Ministry of Health',
+    organisation: 'Directorate of Public Health Services, Ministry of Health',
     description:
-      'Contribute to the planning, coordination, implementation, monitoring and evaluation of public and environmental health programmes.',
+      'Supporting the coordination, implementation and monitoring of environmental health programme activities at national level.',
     responsibilities: [
-      'Contribute to the development of policies, guidelines, frameworks, work plans and proposals.',
-      'Conduct health facility monitoring and supervisory visits for environmental health activities and projects.',
-      'Support research through data collection and analysis.',
-      'Participate in activities under the WASH and Occupational Health and Safety Units.',
+      'Coordinate and monitor environmental health programme activities.',
+      'Conduct supervisory visits and monitor environmental health practices in health facilities.',
+      'Support data collection, analysis, verification and reporting.',
+      'Contribute to the preparation of work plans, proposals, guidelines and programme reports.',
     ],
   },
   {
-    period: '17 December 2020 – 14 December 2022',
     location: 'Besse Community Clinic',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Oversaw public and environmental health services across 14 catchment communities, supporting disease prevention and community-level interventions.',
+      'Contributed to health service delivery and public health activities at community level.',
     responsibilities: [
-      'Conducted environmental inspections, addressed environmental complaints, and supported vaccination and disease surveillance.',
-      'Investigated diseases of public health importance, including measles, yellow fever and poliomyelitis.',
-      'Contributed to health education and promotion, birth registration and supervision of mass vaccination campaigns.',
+      'Support the implementation of public health activities at facility and community levels.',
+      'Participate in disease surveillance and health information reporting.',
+      'Support health promotion, community sensitisation and public health education.',
     ],
   },
   {
-    period: '4 March 2020 – 16 December 2020',
     location: 'Giboroh Point of Entry',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Supported public health surveillance and response activities at a point of entry during the COVID-19 period.',
+      'Supported public health activities at a designated point of entry, including activities related to COVID-19 and the International Health Regulations.',
     responsibilities: [
-      'Screened international travellers for COVID-19 and other diseases of public health concern.',
-      'Facilitated yellow fever vaccination for travellers from endemic zones and referred ill travellers to health facilities.',
-      'Supported quarantine procedures for suspected cases and coordinated responses with immigration and security personnel.',
+      'Support public health screening and surveillance activities at the point of entry.',
+      'Contribute to COVID-19 response activities and public health measures.',
+      'Support implementation of relevant International Health Regulations activities.',
     ],
   },
   {
-    period: '29 August 2018 – 3 March 2020',
     location: 'Bwiam General Hospital',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Contributed to facility-based and community public health activities, environmental assessments and community engagement.',
+      'Contributed to public health service delivery and health facility activities.',
     responsibilities: [
-      'Conducted environmental inspections, community needs assessments, vaccination and disease surveillance.',
-      'Assessed water points and water sources, collected data and prepared reports, including monthly returns to the Regional Health Directorate.',
-      'Trained Village Health Workers and Community Birth Companions and worked with Village Development Committees on community-based interventions.',
+      'Support disease surveillance and public health reporting.',
+      'Participate in health promotion and community sensitisation activities.',
+      'Support routine public health activities and coordination with health facility staff.',
     ],
   },
   {
-    period: '24 March 2016 – 28 August 2018',
     location: 'Brikamaba Health Centre',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Headed public and environmental health activities and supported community-based disease prevention interventions.',
+      'Supported district-level public health activities, including surveillance, health promotion and immunisation.',
     responsibilities: [
-      'Contributed to microplanning for community interventions, including indoor residual spraying for mosquito control.',
-      'Conducted environmental and food inspections, disease surveillance, and sample collection and transportation to the National Public Health Laboratory.',
-      'Supported food inspection and vaccination activities and investigations involving diseases of public health importance.',
+      'Support disease surveillance, data collection and reporting.',
+      'Participate in vaccination and immunisation activities.',
+      'Conduct health promotion and community engagement activities.',
     ],
   },
   {
-    period: '10 July 2014 – 23 March 2016',
     location: 'Sami Karantaba Health Centre',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Delivered public health activities across a catchment area of approximately 42 communities during an early district-level posting.',
+      'Contributed to public health service delivery in a district health facility serving surrounding communities.',
     responsibilities: [
-      'Conducted compound inspections and screened food vendors.',
-      'Supported data compilation and reporting, vaccination, disease surveillance and birth registration.',
-      'Trained Village Support Groups and Village Development Committees to support community-level public health activities.',
+      'Support routine public health activities and disease surveillance.',
+      'Participate in health education and community sensitisation.',
+      'Support data collection and reporting of public health activities.',
     ],
   },
 ];
 
-const expertise = [
+const areasOfInterest = [
   {
     number: '01',
     title: 'Environmental Health',
     description:
-      'Environmental inspections, health facility monitoring, sanitation, waste management and environmental health programme implementation.',
+      'Environmental health practice and the prevention of environmental health risks.',
   },
   {
     number: '02',
-    title: 'Public Health Surveillance',
-    description:
-      'Disease surveillance, outbreak investigation, vaccination activities and public health response at community and point-of-entry levels.',
+    title: 'Public Health Research',
+    description: 'Public health evidence-informed decision-making.',
   },
   {
     number: '03',
-    title: 'Data Analysis',
+    title: 'Air Quality Monitoring',
     description:
-      'Applying statistical and data analysis tools to organise, validate, analyse and interpret information for public health decision-making.',
+      'Air quality monitoring, exposure assessment and investigation of environmental health impacts.',
   },
   {
     number: '04',
-    title: 'Data Visualisation',
+    title: 'Data Analysis',
     description:
-      'Using dashboards, charts and reporting tools to communicate findings and monitor programme information.',
+      'Statistical analysis and interpretation of public health and environmental data.',
   },
   {
     number: '05',
-    title: 'Digital Data Collection',
+    title: 'Data Visualisation',
     description:
-      'Supporting digital surveys, field data collection and structured information gathering.',
+      'Presenting information through dashboards, charts and accessible visual reports.',
   },
   {
     number: '06',
-    title: 'WASH and Occupational Health',
+    title: 'Digital Data Collection',
     description:
-      'Contributing to water, sanitation and hygiene activities and occupational health and safety programme implementation.',
+      'Digital surveys and field data collection using appropriate data collection tools.',
   },
 ];
 
 const technicalSkills = [
   {
-    number: '01',
     title: 'Statistical Analysis',
-    description:
-      'Statistical computing, data management and analysis for research and public health applications.',
-    tools: ['R', 'SPSS', 'Stata'],
-    icon: 'chart',
+    tools: [
+      { name: 'R', icon: 'r' },
+      { name: 'SPSS', icon: 'spss' },
+      { name: 'Stata', icon: 'stata' },
+    ],
   },
   {
-    number: '02',
     title: 'Data Visualisation and Monitoring',
-    description:
-      'Presenting data through clear visualisations, dashboards and reports to support monitoring and decision-making.',
-    tools: ['Power BI', 'Excel'],
-    icon: 'visual',
+    tools: [
+      { name: 'Power BI', icon: 'powerbi' },
+      { name: 'Excel', icon: 'excel' },
+    ],
   },
   {
-    number: '03',
     title: 'Digital Data Collection',
-    description:
-      'Digital questionnaire development and electronic field data collection for surveys and public health activities.',
-    tools: ['KoboToolbox', 'KoboCollect'],
-    icon: 'survey',
+    tools: [
+      { name: 'KoboToolbox', icon: 'kobo' },
+      { name: 'KoboCollect', icon: 'kobocollect' },
+    ],
   },
 ];
 
 const projects = [
   {
-    number: '01',
-    category: 'Research and Data Analysis',
     title: 'Air Pollution and Hospital Admissions in Urban Gambia',
     description:
-      'Research examining the relationship between air pollution and hospital admissions in urban Gambia, using statistical analysis to explore potential public health implications.',
-    tags: ['Air Quality', 'Statistical Analysis', 'Public Health'],
+      'Research examining the relationship between air pollution indicators and hospital admissions in an urban Gambian setting.',
+    tags: ['Air Quality', 'Public Health Research', 'Data Analysis'],
   },
   {
-    number: '02',
-    category: 'Digital Data Collection',
     title: 'Household Energy, Air Quality and Waste Survey',
     description:
-      'A digital survey initiative focused on household energy use, air quality and waste management to support environmental health research and planning.',
-    tags: ['KoboToolbox', 'Field Surveys', 'Environmental Health'],
+      'A household survey initiative focused on household energy use, air quality and waste-related environmental health information.',
+    tags: ['KoboToolbox', 'Environmental Health', 'Survey Data'],
   },
   {
-    number: '03',
-    category: 'Monitoring and Reporting',
     title: 'Environmental Health Programme Monitoring',
     description:
-      'Professional work involving environmental health monitoring, supervisory visits, data collection and reporting to support programme implementation and evidence-informed decisions.',
-    tags: ['Monitoring', 'Data Reporting', 'Programme Support'],
-  },
-];
-
-const education = [
-  {
-    label: 'UNDERGRADUATE DEGREE',
-    qualification: 'BSc Public and Environmental Health',
-    institution: 'University of The Gambia',
+      'Application of data collection, monitoring and reporting approaches to support environmental health programme activities.',
+    tags: ['Monitoring', 'Reporting', 'Data Management'],
   },
   {
-    label: 'HIGHER NATIONAL DIPLOMA',
-    qualification: 'HND Public and Environmental Health',
-    institution: 'The Gambia College',
-  },
-  {
-    label: 'CONTINUING DEVELOPMENT',
-    qualification: 'Public Health Research and Data Analytics',
-    institution:
-      'Professional development interests in research, data analysis and digital tools for public health.',
+    title:
+      'Assessing PM2.5 Exposure Among Bullock Quarry Workers in The Gambia During Various Activities',
+    description:
+      'To determine the exposure level of quarry workers to particulate matter pollutants while at work, commuting, and at other places.',
+    tags: ['PM2.5', 'Occupational Health', 'Exposure Assessment'],
   },
 ];
 
@@ -194,265 +165,584 @@ const presentations = [
   {
     title:
       'Ambient Particulate Matter, Humidity and Hospital Admissions in The Gambia: An Ecological Panel Study',
-    venue: 'National Public Health Scientific Conference 2.0',
+    event: 'National Public Health Scientific Conference 2.0',
   },
   {
     title:
       'Exposure to Fine Particulate Matter and Volatile Organic Compounds Among Artisanal Fish Smokers in Coastal Gambia: A Pilot Cross-Sectional Study',
-    venue: 'National Public Health Scientific Conference 2.0',
+    event: 'National Public Health Scientific Conference 2.0',
   },
   {
     title:
       'Assessing PM2.5 Exposure Among Bullock Quarry Workers in The Gambia During Various Activities',
-    venue: '2025 OpenAQ Community Ambassador Graduation',
+    event: '2025 OpenAQ Community Ambassador Graduation',
   },
   {
     title:
       'The Role of Environmental Health Professionals in Advancing One Health and Mitigating the Public Health Impacts of Climate Change',
-    venue: 'University of The Gambia',
+    event: 'University of The Gambia',
   },
 ];
 
 function SectionHeading({ eyebrow, title, description }) {
   return (
     <div className="section-heading">
-      <span className="eyebrow">{eyebrow}</span>
+      {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
       <h2>{title}</h2>
-      {description && <p>{description}</p>}
+      {description && (
+        <p className="section-description">{description}</p>
+      )}
     </div>
   );
 }
 
+/* Software icons */
 function SkillIcon({ type }) {
-  if (type === 'chart') {
+  const iconStyle = {
+    width: 36,
+    height: 36,
+    flexShrink: 0,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
+
+  if (type === 'r') {
+    return (
+      <span
+        style={{
+          ...iconStyle,
+          color: '#276DC3',
+          fontSize: 34,
+          fontWeight: 800,
+          fontFamily: 'Arial, sans-serif',
+        }}
+        role="img"
+        aria-label="R"
+        title="R"
+      >
+        R
+      </span>
+    );
+  }
+
+  if (type === 'spss') {
     return (
       <svg
-        viewBox="0 0 48 48"
-        width="34"
-        height="34"
+        style={iconStyle}
+        viewBox="0 0 40 40"
         fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
+        aria-label="SPSS"
+        role="img"
+        title="SPSS"
       >
-        <path d="M8 39V9" />
-        <path d="M8 39H41" />
-        <rect x="14" y="24" width="6" height="11" rx="1" />
-        <rect x="25" y="16" width="6" height="19" rx="1" />
-        <rect x="36" y="9" width="5" height="26" rx="1" />
+        <rect x="2" y="2" width="36" height="36" rx="8" fill="#1769AA" />
+        <path
+          d="M28 11H15a5 5 0 0 0 0 10h10a4 4 0 0 1 0 8H11"
+          stroke="white"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
       </svg>
     );
   }
 
-  if (type === 'visual') {
+  if (type === 'stata') {
+    return (
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stata%20Logo.svg"
+        alt="Stata logo"
+        title="Stata"
+        width="36"
+        height="36"
+        style={{
+          width: 36,
+          height: 36,
+          flexShrink: 0,
+          objectFit: 'contain',
+        }}
+        onError={(event) => {
+          event.currentTarget.style.display = 'none';
+        }}
+      />
+    );
+  }
+
+  if (type === 'powerbi') {
     return (
       <svg
-        viewBox="0 0 48 48"
-        width="34"
-        height="34"
+        style={iconStyle}
+        viewBox="0 0 40 40"
+        fill="none"
+        aria-label="Power BI"
+        role="img"
+        title="Power BI"
+      >
+        <path d="M3 23h7v13H3z" fill="#F2C811" />
+        <path d="M12 15h7v21h-7z" fill="#E6A700" />
+        <path d="M21 7h7v29h-7z" fill="#D99500" />
+        <path d="M30 13h7v23h-7z" fill="#F2C811" />
+      </svg>
+    );
+  }
+
+  if (type === 'excel') {
+    return (
+      <svg
+        style={iconStyle}
+        viewBox="0 0 40 40"
+        fill="none"
+        aria-label="Excel"
+        role="img"
+        title="Excel"
+      >
+        <rect x="12" y="3" width="25" height="34" rx="2" fill="#217346" />
+        <path
+          d="M20 10h12M20 16h12M20 22h12M20 28h12"
+          stroke="#FFFFFF"
+          strokeOpacity=".7"
+        />
+        <path d="M3 10h19v21H3z" fill="#185C37" />
+        <path
+          d="m8 15 9 11m0-11L8 26"
+          stroke="white"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === 'kobo' || type === 'kobocollect') {
+    return (
+      <svg
+        style={iconStyle}
+        viewBox="0 0 40 40"
+        fill="none"
+        aria-label={type === 'kobo' ? 'KoboToolbox' : 'KoboCollect'}
+        role="img"
+        title={type === 'kobo' ? 'KoboToolbox' : 'KoboCollect'}
+      >
+        <path
+          d="M20 2 36 11v18L20 38 4 29V11L20 2Z"
+          fill={type === 'kobo' ? '#276DC3' : '#217346'}
+        />
+        <path
+          d="M20 2v18m16-9L20 20 4 11"
+          stroke="white"
+          strokeWidth="1.4"
+          strokeOpacity=".8"
+        />
+        {type === 'kobo' ? (
+          <path
+            d="m13 13 4 4 10-10"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        ) : (
+          <path
+            d="m12 21 5 5 11-12"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        )}
+      </svg>
+    );
+  }
+
+  return null;
+}
+
+function ContactIcon({ type }) {
+  const commonProps = {
+    width: 18,
+    height: 18,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.8,
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round',
+    'aria-hidden': true,
+  };
+
+  if (type === 'email') {
+    return (
+      <svg {...commonProps}>
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="m3 7 9 6 9-6" />
+      </svg>
+    );
+  }
+
+  if (type === 'phone') {
+    return (
+      <svg {...commonProps}>
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.35 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.93a16 16 0 0 0 6 6l1.3-1.27a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.68A2 2 0 0 1 22 16.92Z" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...commonProps}>
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6Z" />
+      <rect x="2" y="9" width="4" height="12" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
+/* Public Health, Air Pollution and Data Analytics icons */
+function FocusIcon({ type }) {
+  if (type === 'health') {
+    return (
+      <svg
+        viewBox="0 0 48 40"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.4"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
       >
-        <rect x="5" y="7" width="38" height="29" rx="3" />
-        <path d="M12 29L20 21L26 25L36 14" />
-        <path d="M18 42H30" />
-        <path d="M24 36V42" />
+        <circle cx="24" cy="8" r="5" />
+        <circle cx="10" cy="12" r="4" />
+        <circle cx="38" cy="12" r="4" />
+        <path d="M15 34v-7a9 9 0 0 1 18 0v7" />
+        <path d="M2 33v-6a8 8 0 0 1 8-8 8 8 0 0 1 6 3" />
+        <path d="M46 33v-6a8 8 0 0 0-8-8 8 8 0 0 0-6 3" />
+        <path d="M19 34v-4h10v4" />
+      </svg>
+    );
+  }
+
+  if (type === 'environment') {
+    return (
+      <svg
+        viewBox="0 0 48 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M4 35V23l11-6v6l10-6v18" />
+        <path d="M25 35V22h19v13" />
+        <path d="M31 28v3M38 28v3" />
+        <path d="M12 19V10h6v5" />
+        <path d="M15 10c-4-2-2-7 2-7" />
+        <path d="M17 9c4-3 8 0 7 4" />
+        <path d="M24 13c4-1 6 2 4 5" />
+        <circle cx="33" cy="6" r="1.4" fill="currentColor" />
+        <circle cx="40" cy="13" r="1.1" fill="currentColor" />
+        <circle cx="34" cy="19" r="1.3" fill="currentColor" />
+        <circle cx="43" cy="20" r="0.9" fill="currentColor" />
+        <path d="M3 35h43" />
       </svg>
     );
   }
 
   return (
     <svg
-      viewBox="0 0 48 48"
-      width="34"
-      height="34"
+      viewBox="0 0 48 40"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.4"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
     >
-      <rect x="10" y="6" width="28" height="36" rx="4" />
-      <path d="M18 6V4H30V6" />
-      <path d="M17 18L20 21L25 15" />
-      <path d="M28 19H32" />
-      <path d="M17 29L20 32L25 26" />
-      <path d="M28 30H32" />
+      <path d="M5 35V22h8v13" />
+      <path d="M19 35V13h8v22" />
+      <path d="M33 35V5h8v30" />
+      <path d="M3 35h42" />
     </svg>
   );
 }
 
 function App() {
   return (
-    <div className="portfolio" id="home">
+    <div className="portfolio">
       <header className="site-header">
         <div className="container nav-container">
           <a className="brand" href="#home" aria-label="Saikou Camara home">
-            <span className="brand-mark">SC</span>
-            <span>Saikou Camara</span>
+            SC<span>.</span>
           </a>
 
           <nav className="main-nav" aria-label="Main navigation">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#expertise">Expertise</a>
-            <a href="#skills">Technical Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#research">Research</a>
-            <a href="#education">Education</a>
+            <a className="nav-link" href="#about">About</a>
+            <a className="nav-link" href="#skills">Skills</a>
+            <a className="nav-link" href="#experience">Experience</a>
+            <a className="nav-link" href="#projects">Projects</a>
+            <a className="nav-link" href="#presentations">Research</a>
+            <a className="nav-link" href="#interests">Interests</a>
             <a className="nav-contact" href="#contact">Contact</a>
           </nav>
         </div>
       </header>
 
       <main>
-        <section className="hero container">
-          <div className="hero-content">
-            <span className="eyebrow">
-              PUBLIC HEALTH · ENVIRONMENT · DATA
-            </span>
-
-            <h1>
-              Saikou <span>Camara</span>
-            </h1>
-
-            <h2>
-              Public and Environmental Health Professional
-              <span> | Data Analyst</span>
-            </h2>
-
-            <p className="hero-description">
-              I am a Gambian public and environmental health professional
-              with experience in health service delivery, programme
-              implementation, environmental health and public health
-              research. I am interested in using data and digital tools
-              to generate insights that support better public health
-              decisions.
-            </p>
-
-            <div className="hero-actions">
-              <a className="button button-primary" href="#experience">
-                Explore My Experience <span aria-hidden="true">→</span>
-              </a>
-              <a className="button button-secondary" href="#projects">
-                View My Work
-              </a>
-            </div>
-
-            <div className="hero-meta">
-              <span>The Gambia</span>
-              <span className="meta-dot">•</span>
-              <span>Public Health</span>
-              <span className="meta-dot">•</span>
-              <span>Data Analytics</span>
-            </div>
-          </div>
-
-          <div className="hero-visual" aria-label="Professional profile">
-            <div className="visual-orbit orbit-one" />
-            <div className="visual-orbit orbit-two" />
-
-            <div className="visual-card">
-              <span className="visual-label">PROFESSIONAL PROFILE</span>
-              <div className="visual-initials">SC</div>
-              <h3>Health. Evidence. Impact.</h3>
-              <p>
-                Connecting public health practice with data, research
-                and evidence-informed decision-making.
+        <section className="hero section" id="home">
+          <div className="container hero-grid">
+            <div className="hero-content">
+              <p className="eyebrow">
+                PUBLIC HEALTH <span>·</span> ENVIRONMENT <span>·</span> DATA
               </p>
-              <div className="visual-tags">
-                <span>Environmental Health</span>
-                <span>Research</span>
-                <span>Analytics</span>
+
+              <p className="hero-greeting">Hello, I’m</p>
+
+              <h1>
+                Saikou Camara<span className="name-period">.</span>
+              </h1>
+
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  gap: '4px',
+                  marginTop: '8px',
+                  marginBottom: '0',
+                }}
+              >
+                <p
+                  className="hero-professional-title"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'baseline',
+                    gap: '9px',
+                    margin: 0,
+                    background: 'none',
+                    padding: 0,
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      color: '#2E9B65',
+                      fontSize: '0.8em',
+                      lineHeight: 1,
+                    }}
+                  >
+                    ●
+                  </span>
+                  <span>Public and Environmental Health Professional</span>
+                </p>
+
+                <p
+                  className="hero-data-title"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'baseline',
+                    gap: '9px',
+                    margin: 0,
+                    background: 'none',
+                    padding: 0,
+                    color: 'inherit',
+                    fontWeight: 'inherit',
+                    fontSize: 'inherit',
+                  }}
+                >
+                  <span
+                    aria-hidden="true"
+                    style={{
+                      color: '#2E9B65',
+                      fontSize: '0.8em',
+                      lineHeight: 1,
+                    }}
+                  >
+                    ●
+                  </span>
+                  <span>Data Analyst</span>
+                </p>
+              </div>
+
+              <div className="hero-actions">
+                <a className="button button-primary" href="#projects">
+                  Explore My Work <span aria-hidden="true">↓</span>
+                </a>
               </div>
             </div>
 
-            <div className="floating-note">
-              <span className="floating-note-icon" aria-hidden="true">↗</span>
-              <span>
-                <strong>Evidence-informed</strong>
-                <small>Public health practice</small>
-              </span>
+            <div className="hero-visual">
+              <div className="hero-image-panel">
+                <img
+                  className="profile-image"
+                  src="/profile.jpg"
+                  alt="Portrait of Saikou Camara"
+                  onError={(event) => {
+                    event.currentTarget.style.display = 'none';
+                    const placeholder =
+                      event.currentTarget.parentElement?.querySelector(
+                        '.photo-placeholder'
+                      );
+                    if (placeholder) placeholder.style.display = 'flex';
+                  }}
+                />
+
+                <div className="photo-placeholder">
+                  <span>SC</span>
+                  <p>Public Health · Environment · Data</p>
+                </div>
+
+                <div className="image-dots" aria-hidden="true" />
+              </div>
+            </div>
+          </div>
+
+          <div className="focus-strip" aria-label="Professional focus areas">
+            <div className="focus-item">
+              <FocusIcon type="health" />
+              <span>Public Health</span>
+            </div>
+
+            <div className="focus-item">
+              <FocusIcon type="environment" />
+              <span>Environment</span>
+            </div>
+
+            <div className="focus-item">
+              <FocusIcon type="analytics" />
+              <span>Data Analytics</span>
             </div>
           </div>
         </section>
 
         <section className="section section-alt" id="about">
           <div className="container">
-            <SectionHeading
-              eyebrow="ABOUT ME"
-              title="Public health practice with a data-driven perspective."
-              description="My professional journey combines frontline public health experience with a growing focus on research, data analysis and evidence-informed decision-making."
-            />
+            <SectionHeading title="About Me 😊" />
 
-            <div className="about-grid">
-              <div className="about-main">
-                <p>
-                  I am a Public and Environmental Health professional
-                  from The Gambia, with experience in public health
-                  service delivery and programme implementation at
-                  district and national levels. I have worked with the
-                  Ministry of Health since 2014, contributing to public
-                  health activities and environmental health programmes.
-                </p>
-                <p>
-                  My experience spans environmental inspections,
-                  disease surveillance, vaccination activities,
-                  community engagement, health facility monitoring and
-                  programme reporting. I have also contributed to
-                  activities involving water, sanitation and hygiene
-                  (WASH) and occupational health and safety.
-                </p>
-                <p>
-                  I am particularly interested in strengthening
-                  evidence-informed decision-making through research,
-                  statistical analysis and digital tools. My goal is to
-                  help translate public health data into useful insights
-                  for policies, programmes and practice.
-                </p>
-              </div>
+            <div className="about-content">
+              <p>
+                I am a Public and Environmental Health professional from The
+                Gambia, with experience in public health service delivery and
+                programme implementation at district and national levels. I
+                have been working with the Ministry of Health for over a decade,
+                contributing to public health activities and environmental
+                health programmes.
+              </p>
 
-              <aside className="about-highlight">
-                <div className="highlight-symbol" aria-hidden="true">+</div>
-                <span className="eyebrow">MY PROFESSIONAL FOCUS</span>
-                <h3>Turning public health information into useful evidence.</h3>
-                <p>
-                  Environmental health, applied research, data quality,
-                  digital data collection and clear communication of
-                  findings.
-                </p>
-              </aside>
+              <p>
+                I am particularly interested in strengthening
+                evidence-informed decision-making through public and environmental health research.
+                My goal is to help translate public health data into
+                useful insights for policies, programmes and practice.
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="section" id="experience">
+        <section className="section" id="skills">
           <div className="container">
             <SectionHeading
-              eyebrow="CAREER JOURNEY"
-              title="Professional Experience"
-              description="My experience with the Ministry of Health of The Gambia, from district-level health services to environmental health programme work at the national level."
+              eyebrow="TOOLS AND CAPABILITIES"
+              title="Technical Skills"
+              description="Tools I use or am developing skills in for statistical analysis, visualisation and digital data collection."
             />
 
-            <div className="timeline">
-              {experience.map((item, index) => (
-                <article className="timeline-item" key={item.location}>
-                  <div className="timeline-marker">
-                    {String(index + 1).padStart(2, '0')}
+            <div className="skills-grid">
+              {technicalSkills.map((skill) => (
+                <article className="skill-card" key={skill.title}>
+                  <h3>{skill.title}</h3>
+
+                  <div
+                    className="skill-tools-list"
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      flexWrap: 'wrap',
+                      alignItems: 'flex-start',
+                      justifyContent: 'flex-start',
+                      gap: '22px',
+                      marginTop: '20px',
+                    }}
+                  >
+                    {skill.tools.map((tool) => (
+                      <div
+                        key={tool.name}
+                        className="skill-tool-item"
+                        title={tool.name}
+                        aria-label={tool.name}
+                        style={{
+                          display: 'inline-flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'flex-start',
+                          gap: '9px',
+                          width: '82px',
+                          minHeight: '78px',
+                          textAlign: 'center',
+                        }}
+                      >
+                        <span
+                          style={{
+                            width: '48px',
+                            height: '48px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '10px',
+                            backgroundColor: '#F7F9FC',
+                            border: '1px solid #E7EBF0',
+                            boxSizing: 'border-box',
+                          }}
+                        >
+                          <SkillIcon type={tool.icon} />
+                        </span>
+
+                        <span
+                          style={{
+                            fontSize: '13px',
+                            lineHeight: 1.35,
+                            fontWeight: 600,
+                            color: '#344054',
+                            overflowWrap: 'anywhere',
+                          }}
+                        >
+                          {tool.name}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                  <div className="timeline-content">
-                    <span className="timeline-period">{item.period}</span>
-                    <h3>{item.location}</h3>
-                    <h4>{item.organisation}</h4>
-                    <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section-alt" id="experience">
+          <div className="container">
+            <SectionHeading
+              eyebrow="MY PROFESSIONAL JOURNEY"
+              title="Professional Experience"
+              description="My professional experience across health facilities and the national environmental health programme."
+            />
+
+            <div className="experience-list-container">
+              {experience.map((item, index) => (
+                <article className="experience-card" key={item.location}>
+                  <div className="experience-marker">
+                    <span>{String(index + 1).padStart(2, '0')}</span>
+                  </div>
+
+                  <div className="experience-content">
+                    <div className="experience-heading">
+                      <h3>{item.location}</h3>
+                      <span className="experience-organisation">
+                        {item.organisation}
+                      </span>
+                    </div>
+
                     <ul className="experience-list">
+                      <li className="experience-description">
+                        {item.description}
+                      </li>
+
                       {item.responsibilities.map((responsibility) => (
                         <li key={responsibility}>{responsibility}</li>
                       ))}
@@ -464,78 +754,35 @@ function App() {
           </div>
         </section>
 
-        <section className="section section-alt" id="expertise">
+        <section className="section" id="projects">
           <div className="container">
             <SectionHeading
-              eyebrow="AREAS OF EXPERTISE"
-              title="Where public health meets data."
-              description="Key areas of professional experience and technical interest across environmental health, programme implementation and public health analytics."
-            />
-
-            <div className="expertise-grid">
-              {expertise.map((item) => (
-                <article className="expertise-card" key={item.number}>
-                  <span className="card-number">{item.number}</span>
-                  <span className="card-arrow" aria-hidden="true">↗</span>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="skills">
-          <div className="container">
-            <SectionHeading
-              eyebrow="TECHNICAL TOOLKIT"
-              title="Technical Skills"
-              description="Key tools I use for statistical analysis, data visualisation and monitoring, and digital data collection."
-            />
-
-            <div className="expertise-grid">
-              {technicalSkills.map((skill) => (
-                <article className="expertise-card skill-card" key={skill.number}>
-                  <div className="skill-icon">
-                    <SkillIcon type={skill.icon} />
-                  </div>
-
-                  <span className="card-number">{skill.number}</span>
-                  <h3>{skill.title}</h3>
-                  <p>{skill.description}</p>
-
-                  <div className="project-tags skill-tags">
-                    {skill.tools.map((tool) => (
-                      <span key={tool}>{tool}</span>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section section-alt" id="projects">
-          <div className="container">
-            <SectionHeading
-              eyebrow="SELECTED WORK"
-              title="Research and professional applications."
-              description="Examples of research, digital data collection and programme work connected to my public and environmental health interests."
+              eyebrow="PRACTICAL APPLICATION"
+              title="Projects"
+              description="Examples of research and programme-related work connected to environmental and public health."
             />
 
             <div className="projects-grid">
-              {projects.map((project) => (
-                <article className="project-card" key={project.number}>
+              {projects.map((project, index) => (
+                <article className="project-card" key={project.title}>
                   <div className="project-topline">
-                    <span className="project-number">{project.number}</span>
-                    <span className="project-category">{project.category}</span>
+                    <span className="project-index">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <span className="project-category">SELECTED WORK</span>
                   </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="project-tags">
-                    {project.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
+
+                  <div className="project-card-content">
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+
+                    <div className="project-tags">
+                      {project.tags.map((tag) => (
+                        <span className="project-tag" key={tag}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </article>
               ))}
@@ -543,131 +790,132 @@ function App() {
           </div>
         </section>
 
-        <section className="section section-alt" id="research">
+        <section className="section section-alt" id="presentations">
           <div className="container">
             <SectionHeading
-              eyebrow="RESEARCH & KNOWLEDGE SHARING"
+              eyebrow="RESEARCH AND KNOWLEDGE SHARING"
               title="Research and Presentations"
-              description="Explore my research profile and selected presentations on air quality, environmental health and public health practice."
+              description="Explore my research profile and selected scientific and professional presentations."
             />
 
-            <div className="projects-grid research-grid">
-              <article className="project-card research-profile-card">
-                <div className="project-topline">
-                  <span className="project-category">SCHOLARLY PROFILE</span>
+            <div className="presentations-full-width">
+              <article className="project-card presentations-card">
+                <div className="research-block">
+                  <span className="project-category">RESEARCH PROFILE</span>
+                  <h3>Research</h3>
+                  <p>
+                    Explore my research interests, publications and academic
+                    contributions through my Google Scholar profile.
+                  </p>
+
+                  <a
+                    className="scholar-link"
+                    href="https://scholar.google.com/citations?user=fxgLm1wAAAAJ&hl=en"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Google Scholar Profile ↗
+                  </a>
                 </div>
-                <h3>Research Profile</h3>
-                <p>
-                  Explore my research interests and scholarly contributions
-                  through my Google Scholar profile.
-                </p>
+
+                <div className="presentations-block">
+                  <h3>Presentations</h3>
+
+                  <ul className="presentation-list">
+                    {presentations.map((presentation, index) => (
+                      <li
+                        className="presentation-item"
+                        key={presentation.title}
+                      >
+                        <span className="presentation-number">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+
+                        <div>
+                          <h3>{presentation.title}</h3>
+                          <p>{presentation.event}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section className="section" id="interests">
+          <div className="container">
+            <SectionHeading
+              eyebrow="PROFESSIONAL FOCUS"
+              title="Areas of Interest"
+              description="The public health and data-related areas that shape my professional interests."
+            />
+
+            <div className="interest-grid">
+              {areasOfInterest.map((area) => (
+                <article className="interest-card" key={area.number}>
+                  <span className="interest-number">{area.number}</span>
+                  <h3>{area.title}</h3>
+                  <p>{area.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section contact-section" id="contact">
+          <div className="container">
+            <SectionHeading
+              eyebrow="LET'S CONNECT"
+              title="Contact"
+              description="Connect with me about public health, environmental health, research and data-related work."
+            />
+
+            <div className="contact-content">
+              <div className="contact-actions">
                 <a
-                  className="button button-primary research-link"
-                  href="https://scholar.google.com/citations?user=fxgLm1wAAAAJ&hl=en"
+                  className="button button-primary"
+                  href="mailto:saikou@gmail.com"
+                >
+                  <ContactIcon type="email" />
+                  <span>Email Me</span>
+                </a>
+
+                <a
+                  className="button button-outline"
+                  href="tel:+2203710000"
+                >
+                  <ContactIcon type="phone" />
+                  <span>Call Me</span>
+                </a>
+
+                <a
+                  className="button button-outline"
+                  href="https://www.linkedin.com/feed/foryou/"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  View Google Scholar Profile <span aria-hidden="true">↗</span>
+                  <ContactIcon type="linkedin" />
+                  <span>LinkedIn</span>
                 </a>
-              </article>
-
-              <article className="project-card presentations-card">
-                <div className="project-topline">
-                  <span className="project-category">SELECTED WORK</span>
-                </div>
-                <h3>Selected Presentations</h3>
-                <div className="presentation-list">
-                  {presentations.map((presentation, index) => (
-                    <div className="presentation-item" key={presentation.title}>
-                      <span className="presentation-number">
-                        {String(index + 1).padStart(2, '0')}
-                      </span>
-                      <div>
-                        <h4>{presentation.title}</h4>
-                        <p>{presentation.venue}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="section" id="education">
-          <div className="container">
-            <SectionHeading
-              eyebrow="EDUCATION"
-              title="Academic background and development."
-              description="Formal qualifications in public and environmental health, complemented by continuing professional development and an interest in applied data analytics."
-            />
-
-            <div className="education-grid">
-              {education.map((item, index) => (
-                <article
-                  className={`education-card ${
-                    index === 0 ? 'education-card-accent' : ''
-                  }`}
-                  key={item.qualification}
-                >
-                  <span className="education-label">{item.label}</span>
-                  <h3>{item.qualification}</h3>
-                  <p>{item.institution}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="contact-section" id="contact">
-          <div className="container contact-inner">
-            <span className="eyebrow">GET IN TOUCH</span>
-
-            <h2>Let’s collaborate.</h2>
-
-            <p>
-              I welcome opportunities to collaborate on public health
-              research, environmental health initiatives, data analysis
-              and research. Feel free to get in touch
-              to discuss ideas and opportunities for collaboration.
-            </p>
-
-            <div className="contact-actions">
-              <a
-                className="button button-primary"
-                href="mailto:saikou@gmail.com?subject=Professional%20Collaboration"
-              >
-                Email Me <span aria-hidden="true">↗</span>
-              </a>
-
-              <a
-                className="button button-secondary"
-                href="tel:+220 83 371"
-              >
-                Call Me <span aria-hidden="true">↗</span>
-              </a>
-
-              <a
-                className="button button-secondary"
-                href="https://www.linkedin.com/feed/foryou/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                LinkedIn <span aria-hidden="true">↗</span>
-              </a>
+              </div>
             </div>
           </div>
         </section>
       </main>
 
       <footer className="site-footer">
-        <div className="container footer-inner">
-          <a className="brand footer-brand" href="#home">
-            <span className="brand-mark">SC</span>
-            <span>Saikou Camara</span>
+        <div className="container footer-content">
+          <a className="footer-brand" href="#home">
+            SC<span>.</span>
           </a>
-          <p>Public and Environmental Health · Data Analytics</p>
-          <a className="back-to-top" href="#home">Back to top ↑</a>
+
+          <p>© {new Date().getFullYear()} Saikou Camara</p>
+          <p>Public Health · Environment · Data analysis</p>
+          <a className="back-to-top" href="#home">
+            Back to top ↑
+          </a>
         </div>
       </footer>
     </div>
