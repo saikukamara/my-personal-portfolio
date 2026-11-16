@@ -79,7 +79,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 12px;
 }
 
 .brand,
@@ -246,8 +246,10 @@ img {
   color: var(--navy);
 }
 
+/* FIXED: Reduced the space above the hero eyebrow */
+
 .eyebrow {
-  margin: 16px 0 15px;
+  margin: 3px 0 15px;
   color: var(--green);
   font-size: 11px;
   font-weight: 700;
@@ -919,7 +921,7 @@ img {
   }
 
   .nav-container {
-    gap: 18px;
+    gap: 10px;
   }
 
   .main-nav {
@@ -960,30 +962,25 @@ img {
     width: min(100% - 36px, 600px);
   }
 
-  /* Keep the brand and hamburger on the same row */
-
   .nav-container {
     min-height: 68px;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 11px 0;
-    gap: 10px;
+    gap: 8px;
   }
 
   .brand {
     font-size: 26px;
+    margin-right: 0;
   }
-
-  /* Show hamburger only on mobile */
 
   .menu-toggle {
     display: flex;
     flex: 0 0 auto;
     margin-left: auto;
   }
-
-  /* Hide navigation until the hamburger is clicked */
 
   .main-nav {
     display: none;
@@ -1222,4 +1219,51 @@ img {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
   }
+}
+/* FIX: Remove the gap between SC. and the introductory tagline */
+.hero-greeting {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  line-height: 1 !important;
+}
+
+.hero-greeting + .eyebrow {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  line-height: 1.2 !important;
+}
+/* FIX: Reduce the large space above the main introduction */
+.hero.section {
+  padding-top: 24px !important;
+}
+
+/* Keep the adjustment on smaller screens too */
+@media (max-width: 768px) {
+  .hero.section {
+    padding-top: 20px !important;
+  }
+}
+/* FIX: Move the main introduction closer to the header */
+.hero.section {
+  padding-top: 24px !important;
+}
+
+.hero-grid .hero-content {
+  align-self: start !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Reduce the space above the tagline */
+.hero-content .eyebrow {
+  margin-top: 0 !important;
+}
+
+/* Keep the tagline and greeting closely spaced */
+.hero-content .hero-greeting {
+  margin-top: 0 !important;
+}
+/* Add more space between the professional titles and Explore My Work */
+.hero-content .hero-actions {
+  margin-top: 122px !important;
 }

@@ -1,5 +1,3 @@
-
-import { useState } from 'react';
 import './App.css';
 
 const experience = [
@@ -7,7 +5,7 @@ const experience = [
     location: 'Environmental Health Program',
     organisation: 'Directorate of Public Health Services, Ministry of Health',
     description:
-      'Supporting the coordination, implementation and monitoring of environmental health programme activities at national level.',
+      'Support the coordination, implementation and monitoring of environmental health programme activities at national level.',
     responsibilities: [
       'Coordinate and monitor environmental health programme activities.',
       'Conduct supervisory visits and monitor environmental health practices in health facilities.',
@@ -19,7 +17,7 @@ const experience = [
     location: 'Besse Community Clinic',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Contributed to health service delivery and public health activities at community level.',
+      'Contribute to health service delivery and public health activities at community level.',
     responsibilities: [
       'Support the implementation of public health activities at facility and community levels.',
       'Participate in disease surveillance and health information reporting.',
@@ -30,7 +28,7 @@ const experience = [
     location: 'Giboroh Point of Entry',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Supported public health activities at a designated point of entry, including activities related to COVID-19 and the International Health Regulations.',
+      'Support public health activities at a designated point of entry, including activities related to COVID-19 and the International Health Regulations.',
     responsibilities: [
       'Support public health screening and surveillance activities at the point of entry.',
       'Contribute to COVID-19 response activities and public health measures.',
@@ -41,7 +39,7 @@ const experience = [
     location: 'Bwiam General Hospital',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Contributed to public health service delivery and health facility activities.',
+      'Contribute to public health service delivery and health facility activities.',
     responsibilities: [
       'Support disease surveillance and public health reporting.',
       'Participate in health promotion and community sensitisation activities.',
@@ -52,7 +50,7 @@ const experience = [
     location: 'Brikamaba Health Centre',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Supported district-level public health activities, including surveillance, health promotion and immunisation.',
+      'Support district-level public health activities, including surveillance, health promotion and immunisation.',
     responsibilities: [
       'Support disease surveillance, data collection and reporting.',
       'Participate in vaccination and immunisation activities.',
@@ -63,7 +61,7 @@ const experience = [
     location: 'Sami Karantaba Health Centre',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Contributed to public health service delivery in a district health facility serving surrounding communities.',
+      'Contribute to public health service delivery in a district health facility serving surrounding communities.',
     responsibilities: [
       'Support routine public health activities and disease surveillance.',
       'Participate in health education and community sensitisation.',
@@ -468,50 +466,22 @@ function FocusIcon({ type }) {
 }
 
 function App() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  function closeMobileMenu() {
-    setIsMobileMenuOpen(false);
-  }
-
   return (
     <div className="portfolio">
       <header className="site-header">
         <div className="container nav-container">
-          <a
-            className="brand"
-            href="#home"
-            aria-label="Saikou Camara home"
-            onClick={closeMobileMenu}
-          >
+          <a className="brand" href="#home" aria-label="Saikou Camara home">
             SC<span>.</span>
           </a>
 
-          <button
-            className="menu-toggle"
-            type="button"
-            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="main-navigation"
-            onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-
-          <nav
-            className={`main-nav${isMobileMenuOpen ? ' is-open' : ''}`}
-            id="main-navigation"
-            aria-label="Main navigation"
-          >
-            <a className="nav-link" href="#about" onClick={closeMobileMenu}>About</a>
-            <a className="nav-link" href="#skills" onClick={closeMobileMenu}>Skills</a>
-            <a className="nav-link" href="#experience" onClick={closeMobileMenu}>Experience</a>
-            <a className="nav-link" href="#projects" onClick={closeMobileMenu}>Projects</a>
-            <a className="nav-link" href="#presentations" onClick={closeMobileMenu}>Research</a>
-            <a className="nav-link" href="#interests" onClick={closeMobileMenu}>Interests</a>
-            <a className="nav-contact" href="#contact" onClick={closeMobileMenu}>Contact</a>
+          <nav className="main-nav" aria-label="Main navigation">
+            <a className="nav-link" href="#about">About</a>
+            <a className="nav-link" href="#skills">Skills</a>
+            <a className="nav-link" href="#experience">Experience</a>
+            <a className="nav-link" href="#projects">Projects</a>
+            <a className="nav-link" href="#presentations">Research</a>
+            <a className="nav-link" href="#interests">Interests</a>
+            <a className="nav-contact" href="#contact">Contact</a>
           </nav>
         </div>
       </header>
@@ -592,7 +562,74 @@ function App() {
                 </p>
               </div>
 
-              <div className="hero-actions">
+              {/* Divider separating professional titles from About Me */}
+              <div
+                className="hero-about-divider"
+                aria-hidden="true"
+                style={{
+                  width: '100%',
+                  maxWidth: '520px',
+                  height: '1px',
+                  backgroundColor: '#0d3418',
+                  margin: '24px 0 20px',
+                }}
+              />
+
+              {/* About Me now appears directly beneath Data Analyst */}
+              <div
+                className="hero-about-content"
+                id="about"
+                style={{
+                  width: '100%',
+                  maxWidth: '520px',
+                  paddingTop: '46px',
+                }}
+              >
+                <h2
+                  style={{
+                    margin: '0 0 12px',
+                    color: '#06263a',
+                    fontFamily: "'Playfair Display', Georgia, serif",
+                    fontSize: 'clamp(22px, 2vw, 28px)',
+                    lineHeight: 1.2,
+                  }}
+                >
+                  About Me 😊
+                </h2>
+
+                <p
+                  style={{
+                    margin: '0 0 12px',
+                    color: '#60717a',
+                    fontSize: '14px',
+                    lineHeight: 1.7,
+                  }}
+                >
+                  I am a Public and Environmental Health professional from The
+                  Gambia, with experience in public health service delivery and
+                  programme implementation at district and national levels. I
+                  have been working with the Ministry of Health for over a decade,
+                  contributing to public health activities and environmental
+                  health programmes.
+                </p>
+
+                <p
+                  style={{
+                    margin: 0,
+                    color: '#60717a',
+                    fontSize: '14px',
+                    lineHeight: 1.7,
+                  }}
+                >
+                  I am particularly interested in strengthening evidence-informed
+                  decision-making through public and environmental health research.
+                  My goal is to help translate public health data into useful
+                  insights for policies, programmes and practice.
+                </p>
+              </div>
+
+              {/* Button now sits beneath the About Me text */}
+              <div className="hero-actions" style={{ marginTop: '12px' }}>
                 <a className="button button-primary" href="#projects">
                   Explore My Work <span aria-hidden="true">↓</span>
                 </a>
@@ -639,31 +676,6 @@ function App() {
             <div className="focus-item">
               <FocusIcon type="analytics" />
               <span>Data Analytics</span>
-            </div>
-          </div>
-        </section>
-
-        <section className="section section-alt" id="about">
-          <div className="container">
-            <SectionHeading title="About Me 😊" />
-
-            <div className="about-content">
-              <p>
-                I am a Public and Environmental Health professional from The
-                Gambia, with experience in public health service delivery and
-                programme implementation at district and national levels. I
-                have been working with the Ministry of Health for over a decade,
-                contributing to public health activities and environmental
-                health programmes.
-              </p>
-
-              <p>
-                I am particularly interested in strengthening
-                evidence-informed decision-making through public and
-                environmental health research. My goal is to help translate
-                public health data into useful insights for policies, programmes
-                and practice.
-              </p>
             </div>
           </div>
         </section>
