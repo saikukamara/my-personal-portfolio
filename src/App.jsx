@@ -189,7 +189,9 @@ function SectionHeading({ eyebrow, title, description }) {
   return (
     <div className="section-heading">
       {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
+
       <h2>{title}</h2>
+
       {description && (
         <p className="section-description">{description}</p>
       )}
@@ -237,6 +239,7 @@ function SkillIcon({ type }) {
         title="SPSS"
       >
         <rect x="2" y="2" width="36" height="36" rx="8" fill="#1769AA" />
+
         <path
           d="M28 11H15a5 5 0 0 0 0 10h10a4 4 0 0 1 0 8H11"
           stroke="white"
@@ -249,17 +252,21 @@ function SkillIcon({ type }) {
 
   if (type === 'stata') {
     return (
-      <img
-        src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Stata%20Logo.svg"
-        alt="Stata logo"
-        title="Stata"
-        width="36"
-        height="36"
-        style={{ width: 36, height: 36, objectFit: 'contain' }}
-        onError={(event) => {
-          event.currentTarget.style.display = 'none';
+      <span
+        style={{
+          ...iconStyle,
+          color: '#1769AA',
+          fontSize: 23,
+          fontWeight: 800,
+          fontFamily: 'Arial, sans-serif',
+          letterSpacing: '-1.5px',
         }}
-      />
+        role="img"
+        aria-label="Stata"
+        title="Stata"
+      >
+        ST
+      </span>
     );
   }
 
@@ -292,12 +299,15 @@ function SkillIcon({ type }) {
         title="Excel"
       >
         <rect x="12" y="3" width="25" height="34" rx="2" fill="#217346" />
+
         <path
           d="M20 10h12M20 16h12M20 22h12M20 28h12"
           stroke="#FFFFFF"
           strokeOpacity=".7"
         />
+
         <path d="M3 10h19v21H3z" fill="#185C37" />
+
         <path
           d="m8 15 9 11m0-11L8 26"
           stroke="white"
@@ -322,12 +332,14 @@ function SkillIcon({ type }) {
           d="M20 2 36 11v18L20 38 4 29V11L20 2Z"
           fill={type === 'kobo' ? '#276DC3' : '#217346'}
         />
+
         <path
           d="M20 2v18m16-9L20 20 4 11"
           stroke="white"
           strokeWidth="1.4"
           strokeOpacity=".8"
         />
+
         {type === 'kobo' ? (
           <path
             d="m13 13 4 4 10-10"
@@ -462,7 +474,10 @@ function FocusIcon({ type }) {
 function App() {
   const closeMobileMenu = (event) => {
     const menu = event.currentTarget.closest('details');
-    if (menu) menu.open = false;
+
+    if (menu) {
+      menu.open = false;
+    }
   };
 
   const navigationLinks = [
@@ -550,11 +565,15 @@ function App() {
                   alt="Portrait of Saikou Camara"
                   onError={(event) => {
                     event.currentTarget.style.display = 'none';
+
                     const placeholder =
                       event.currentTarget.parentElement?.querySelector(
                         '.photo-placeholder'
                       );
-                    if (placeholder) placeholder.style.display = 'flex';
+
+                    if (placeholder) {
+                      placeholder.style.display = 'flex';
+                    }
                   }}
                 />
 
@@ -604,10 +623,12 @@ function App() {
               <FocusIcon type="health" />
               <span>Public Health</span>
             </div>
+
             <div className="focus-item">
               <FocusIcon type="environment" />
               <span>Environment</span>
             </div>
+
             <div className="focus-item">
               <FocusIcon type="analytics" />
               <span>Data Analytics</span>
@@ -627,12 +648,14 @@ function App() {
               {technicalSkills.map((skill) => (
                 <article className="skill-card" key={skill.title}>
                   <h3>{skill.title}</h3>
+
                   <div className="skill-tools-list">
                     {skill.tools.map((tool) => (
                       <div className="skill-tool-item" key={tool.name}>
                         <span className="skill-tool-icon">
                           <SkillIcon type={tool.icon} />
                         </span>
+
                         <span className="skill-tool-name">{tool.name}</span>
                       </div>
                     ))}
@@ -643,6 +666,7 @@ function App() {
           </div>
         </section>
 
+        {/* PROFESSIONAL EXPERIENCE */}
         <section className="section section-alt" id="experience">
           <div className="container">
             <SectionHeading
@@ -653,27 +677,49 @@ function App() {
 
             <div className="experience-list-container">
               {experience.map((item, index) => (
-                <article className="experience-card" key={item.location}>
-                  <div className="experience-marker">
-                    <span>{String(index + 1).padStart(2, '0')}</span>
-                  </div>
-                  <div className="experience-content">
-                    <div className="experience-heading">
-                      <h3>{item.location}</h3>
+                <details
+                  className="experience-card experience-accordion"
+                  key={item.location}
+                  name="professional-experience"
+                >
+                  <summary className="experience-summary">
+                    <span className="experience-marker">
+                      <span>{String(index + 1).padStart(2, '0')}</span>
+                    </span>
+
+                    <span className="experience-heading">
+                      <span className="experience-location">
+                        {item.location}
+                      </span>
+
                       <span className="experience-organisation">
                         {item.organisation}
                       </span>
-                    </div>
+                    </span>
+
+                    <span className="experience-arrow" aria-hidden="true">
+                      ▼
+                    </span>
+                  </summary>
+
+                  <div className="experience-content">
+                    <p className="experience-description">
+                      {item.description}
+                    </p>
+
                     <ul className="experience-list">
-                      <li className="experience-description">
-                        {item.description}
-                      </li>
-                      {item.responsibilities.map((responsibility) => (
-                        <li key={responsibility}>{responsibility}</li>
-                      ))}
+                      {item.responsibilities.map(
+                        (responsibility, responsibilityIndex) => (
+                          <li
+                            key={`${item.location}-${responsibilityIndex}`}
+                          >
+                            {responsibility}
+                          </li>
+                        )
+                      )}
                     </ul>
                   </div>
-                </article>
+                </details>
               ))}
             </div>
           </div>
@@ -694,11 +740,14 @@ function App() {
                     <span className="project-index">
                       {String(index + 1).padStart(2, '0')}
                     </span>
+
                     <span className="project-category">SELECTED WORK</span>
                   </div>
+
                   <div className="project-card-content">
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
+
                     <div className="project-tags">
                       {project.tags.map((tag) => (
                         <span className="project-tag" key={tag}>
@@ -725,11 +774,14 @@ function App() {
               <article className="project-card presentations-card">
                 <div className="research-block">
                   <span className="project-category">RESEARCH PROFILE</span>
+
                   <h3>Research</h3>
+
                   <p>
                     Explore my research interests, publications and academic
                     contributions through my Google Scholar profile.
                   </p>
+
                   <a
                     className="scholar-link"
                     href="https://scholar.google.com/citations?user=fxgLm1wAAAAJ&hl=en"
@@ -742,6 +794,7 @@ function App() {
 
                 <div className="presentations-block">
                   <h3>Presentations</h3>
+
                   <ul className="presentation-list">
                     {presentations.map((presentation, index) => (
                       <li
@@ -751,6 +804,7 @@ function App() {
                         <span className="presentation-number">
                           {String(index + 1).padStart(2, '0')}
                         </span>
+
                         <div>
                           <h3>{presentation.title}</h3>
                           <p>{presentation.event}</p>
@@ -776,6 +830,7 @@ function App() {
               {areasOfInterest.map((area) => (
                 <article className="interest-card" key={area.number}>
                   <span className="interest-number">{area.number}</span>
+
                   <h3>{area.title}</h3>
                   <p>{area.description}</p>
                 </article>
@@ -801,10 +856,12 @@ function App() {
                   <ContactIcon type="email" />
                   <span>Email Me</span>
                 </a>
+
                 <a className="button button-outline" href="tel:+2203710000">
                   <ContactIcon type="phone" />
                   <span>Call Me</span>
                 </a>
+
                 <a
                   className="button button-outline"
                   href="https://www.linkedin.com/feed/foryou/"
@@ -825,8 +882,11 @@ function App() {
           <a className="footer-brand" href="#home">
             SC<span>.</span>
           </a>
+
           <p>© {new Date().getFullYear()} Saikou Camara</p>
+
           <p>Public Health · Environment · Data analysis</p>
+
           <a className="back-to-top" href="#home">
             Back to top ↑
           </a>
