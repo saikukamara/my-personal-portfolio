@@ -3801,3 +3801,40 @@ img {
     transition: none;
   }
 }
+
+/* ==========================================
+   FINAL MOBILE FIX:
+   TITLES → HELLO GREETING → ABOUT ME
+   ========================================== */
+
+@media (max-width: 760px) {
+  /* Stack the hero text vertically */
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* Keep the greeting after the professional titles */
+  .hero-content .hero-greeting {
+    order: 10 !important;
+    width: 100% !important;
+    margin: 12px 0 0 !important;
+    padding: 0 !important;
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Keep the three professional titles together */
+  .hero-content .hero-titles {
+    order: 9 !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Place About Me close beneath the hero row */
+  .hero-about-wide {
+    margin-top: 12px !important;
+  }
+}
