@@ -529,54 +529,16 @@ function App() {
                 Saikou Camara<span className="name-period">.</span>
               </h1>
 
-              <div
-                className="hero-titles"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'flex-start',
-                  gap: '4px',
-                  marginTop: '8px',
-                }}
-              >
+              <div className="hero-titles">
                 <p className="hero-professional-title">
                   <span aria-hidden="true">●</span>
-                  Public and Environmental Health Professional
+                  Public Health Professional
                 </p>
 
                 <p className="hero-data-title">
                   <span aria-hidden="true">●</span>
                   Data Analyst
                 </p>
-              </div>
-
-              <div className="hero-about-divider" aria-hidden="true" />
-
-              <div className="hero-about-content" id="about">
-                <h2>About Me 😊</h2>
-
-                <p>
-                  I am a Public and Environmental Health professional from The
-                  Gambia, with experience in public health service delivery and
-                  programme implementation at district and national levels. I
-                  have been working with the Ministry of Health for over a
-                  decade, contributing to public health activities and
-                  environmental health programmes.
-                </p>
-
-                <p>
-                  I am particularly interested in strengthening
-                  evidence-informed decision-making through public and
-                  environmental health research. My goal is to help translate
-                  public health data into useful insights for policies,
-                  programmes and practice.
-                </p>
-              </div>
-
-              <div className="hero-actions">
-                <a className="button button-primary" href="#projects">
-                  Explore My Work <span aria-hidden="true">↓</span>
-                </a>
               </div>
             </div>
 
@@ -603,6 +565,37 @@ function App() {
 
                 <div className="image-dots" aria-hidden="true" />
               </div>
+            </div>
+          </div>
+
+          <div className="container hero-about-wide" id="about">
+            <div className="hero-about-divider" aria-hidden="true" />
+
+            <div className="hero-about-content">
+              <h2>About Me 😊</h2>
+
+              <p>
+                I am a Public and Environmental Health professional from The
+                Gambia, with experience in public health service delivery and
+                programme implementation at district and national levels. I
+                have been working with the Ministry of Health for over a
+                decade, contributing to public health activities and
+                environmental health programmes.
+              </p>
+
+              <p>
+                I am particularly interested in strengthening
+                evidence-informed decision-making through public and
+                environmental health research. My goal is to help translate
+                public health data into useful insights for policies,
+                programmes and practice.
+              </p>
+            </div>
+
+            <div className="hero-actions">
+              <a className="button button-primary" href="#projects">
+                Explore My Work <span aria-hidden="true">↓</span>
+              </a>
             </div>
           </div>
 
@@ -808,10 +801,7 @@ function App() {
                   <ContactIcon type="email" />
                   <span>Email Me</span>
                 </a>
-                <a
-                  className="button button-outline"
-                  href="tel:+2203710000"
-                >
+                <a className="button button-outline" href="tel:+2203710000">
                   <ContactIcon type="phone" />
                   <span>Call Me</span>
                 </a>
