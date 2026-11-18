@@ -1267,3 +1267,286 @@ img {
 .hero-content .hero-actions {
   margin-top: 122px !important;
 }
+
+/* ==========================================
+   MOBILE LAYOUT: KEEP PROFILE BESIDE INTRO
+   ========================================== */
+
+@media (max-width: 768px) {
+  /* Place the introduction and profile in two columns */
+  .hero-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.5fr) minmax(100px, 0.8fr) !important;
+    align-items: start !important;
+    column-gap: 16px !important;
+    row-gap: 20px !important;
+  }
+
+  /* Keep the About Me text in the left column */
+  .hero-content {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    align-self: start !important;
+  }
+
+  /* Keep the profile image in the right column */
+  .hero-visual {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    align-self: start !important;
+    margin: 0 !important;
+  }
+
+  /* Fit the image panel into the right column */
+  .hero-image-panel {
+    width: 100% !important;
+    max-width: 180px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .profile-image {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: 240px !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  /* Reduce text size to fit the narrower introduction */
+  .hero-content h1 {
+    font-size: clamp(22px, 5vw, 32px) !important;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-content .eyebrow {
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-content .hero-professional-title,
+  .hero-content .hero-data-title {
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+  }
+
+  .hero-about-content {
+    max-width: 100% !important;
+  }
+
+  .hero-about-content p {
+    font-size: 12px !important;
+    line-height: 1.6 !important;
+  }
+
+  .hero-about-divider {
+    margin: 16px 0 14px !important;
+  }
+
+  .hero-actions {
+    margin-top: 18px !important;
+  }
+
+  .hero-actions .button {
+    font-size: 11px !important;
+    padding: 10px 12px !important;
+    white-space: normal !important;
+  }
+}
+
+/* For very narrow mobile screens */
+@media (max-width: 380px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(90px, 0.75fr) !important;
+    column-gap: 10px !important;
+  }
+
+  .hero-image-panel {
+    max-width: 140px !important;
+  }
+
+  .profile-image {
+    max-height: 190px !important;
+  }
+
+  .hero-content .hero-professional-title,
+  .hero-content .hero-data-title {
+    font-size: 11px !important;
+  }
+}
+
+/* ==========================================
+   MOBILE HAMBURGER NAVIGATION
+   ========================================== */
+
+/* Hide the hamburger menu on desktop */
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Hide desktop navigation words on mobile */
+  .main-nav {
+    display: none !important;
+  }
+
+  /* Display the three-line menu */
+  .mobile-menu {
+    display: block !important;
+    position: relative;
+    margin-left: auto;
+    z-index: 1000;
+  }
+
+  .mobile-menu summary {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    list-style: none;
+    border: 1px solid #e4e5df;
+    border-radius: 8px;
+    background: #fbfaf6;
+    box-sizing: border-box;
+  }
+
+  .mobile-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu summary::marker {
+    content: "";
+  }
+
+  .mobile-menu summary span {
+    display: block;
+    width: 21px;
+    height: 2px;
+    background: #06263a;
+    border-radius: 2px;
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  /* Animate three lines into an X */
+  .mobile-menu[open] summary span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .mobile-menu[open] summary span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu[open] summary span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Dropdown navigation */
+  .mobile-nav {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 2px;
+    background: #fbfaf6;
+    border: 1px solid #e4e5df;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(4, 31, 45, 0.15);
+    box-sizing: border-box;
+  }
+
+  .mobile-nav a {
+    display: block;
+    padding: 12px 14px;
+    color: #06263a;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+  }
+
+  .mobile-nav a:hover,
+  .mobile-nav a:focus-visible {
+    background: #eef3ee;
+    color: #075542;
+  }
+}
+
+/* Ensure desktop navigation remains visible on wider screens */
+@media (min-width: 769px) {
+  .mobile-menu {
+    display: none !important;
+  }
+
+  .main-nav {
+    display: flex;
+  }
+}
+
+/* Align the two professional titles and remove the green background */
+.hero-titles {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important;
+}
+
+.hero-content .hero-professional-title,
+.hero-content .hero-data-title {
+  display: block !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Keep DATA ANALYST plain, without a green background */
+.hero-content .hero-data-title,
+.hero-content .hero-data-title span {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Keep both titles neatly stacked on mobile */
+@media (max-width: 768px) {
+  .hero-titles {
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+
+  .hero-content .hero-professional-title,
+  .hero-content .hero-data-title {
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+  }
+}

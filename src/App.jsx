@@ -1,3 +1,4 @@
+
 import './App.css';
 
 const experience = [
@@ -5,7 +6,7 @@ const experience = [
     location: 'Environmental Health Program',
     organisation: 'Directorate of Public Health Services, Ministry of Health',
     description:
-      'Support the coordination, implementation and monitoring of environmental health programme activities at national level.',
+      'Supporting the coordination, implementation and monitoring of environmental health programme activities at national level.',
     responsibilities: [
       'Coordinate and monitor environmental health programme activities.',
       'Conduct supervisory visits and monitor environmental health practices in health facilities.',
@@ -17,7 +18,7 @@ const experience = [
     location: 'Besse Community Clinic',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Contribute to health service delivery and public health activities at community level.',
+      'Contributed to health service delivery and public health activities at community level.',
     responsibilities: [
       'Support the implementation of public health activities at facility and community levels.',
       'Participate in disease surveillance and health information reporting.',
@@ -28,7 +29,7 @@ const experience = [
     location: 'Giboroh Point of Entry',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Support public health activities at a designated point of entry, including activities related to COVID-19 and the International Health Regulations.',
+      'Supported public health activities at a designated point of entry, including activities related to COVID-19 and the International Health Regulations.',
     responsibilities: [
       'Support public health screening and surveillance activities at the point of entry.',
       'Contribute to COVID-19 response activities and public health measures.',
@@ -39,7 +40,7 @@ const experience = [
     location: 'Bwiam General Hospital',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Contribute to public health service delivery and health facility activities.',
+      'Contributed to public health service delivery and health facility activities.',
     responsibilities: [
       'Support disease surveillance and public health reporting.',
       'Participate in health promotion and community sensitisation activities.',
@@ -50,7 +51,7 @@ const experience = [
     location: 'Brikamaba Health Centre',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Support district-level public health activities, including surveillance, health promotion and immunisation.',
+      'Supported district-level public health activities, including surveillance, health promotion and immunisation.',
     responsibilities: [
       'Support disease surveillance, data collection and reporting.',
       'Participate in vaccination and immunisation activities.',
@@ -61,7 +62,7 @@ const experience = [
     location: 'Sami Karantaba Health Centre',
     organisation: 'Ministry of Health, The Gambia',
     description:
-      'Contribute to public health service delivery in a district health facility serving surrounding communities.',
+      'Contributed to public health service delivery in a district health facility serving surrounding communities.',
     responsibilities: [
       'Support routine public health activities and disease surveillance.',
       'Participate in health education and community sensitisation.',
@@ -196,7 +197,6 @@ function SectionHeading({ eyebrow, title, description }) {
   );
 }
 
-/* Software icons */
 function SkillIcon({ type }) {
   const iconStyle = {
     width: 36,
@@ -255,12 +255,7 @@ function SkillIcon({ type }) {
         title="Stata"
         width="36"
         height="36"
-        style={{
-          width: 36,
-          height: 36,
-          flexShrink: 0,
-          objectFit: 'contain',
-        }}
+        style={{ width: 36, height: 36, objectFit: 'contain' }}
         onError={(event) => {
           event.currentTarget.style.display = 'none';
         }}
@@ -396,7 +391,6 @@ function ContactIcon({ type }) {
   );
 }
 
-/* Public Health, Air Pollution and Data Analytics icons */
 function FocusIcon({ type }) {
   if (type === 'health') {
     return (
@@ -466,6 +460,21 @@ function FocusIcon({ type }) {
 }
 
 function App() {
+  const closeMobileMenu = (event) => {
+    const menu = event.currentTarget.closest('details');
+    if (menu) menu.open = false;
+  };
+
+  const navigationLinks = [
+    ['About', '#about'],
+    ['Skills', '#skills'],
+    ['Experience', '#experience'],
+    ['Projects', '#projects'],
+    ['Research', '#presentations'],
+    ['Interests', '#interests'],
+    ['Contact', '#contact'],
+  ];
+
   return (
     <div className="portfolio">
       <header className="site-header">
@@ -474,14 +483,34 @@ function App() {
             SC<span>.</span>
           </a>
 
+          <details className="mobile-menu">
+            <summary aria-label="Toggle navigation menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </summary>
+
+            <nav className="mobile-nav" aria-label="Mobile navigation">
+              {navigationLinks.map(([label, href]) => (
+                <a key={href} href={href} onClick={closeMobileMenu}>
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </details>
+
           <nav className="main-nav" aria-label="Main navigation">
-            <a className="nav-link" href="#about">About</a>
-            <a className="nav-link" href="#skills">Skills</a>
-            <a className="nav-link" href="#experience">Experience</a>
-            <a className="nav-link" href="#projects">Projects</a>
-            <a className="nav-link" href="#presentations">Research</a>
-            <a className="nav-link" href="#interests">Interests</a>
-            <a className="nav-contact" href="#contact">Contact</a>
+            {navigationLinks.map(([label, href]) =>
+              label === 'Contact' ? (
+                <a className="nav-contact" href={href} key={href}>
+                  {label}
+                </a>
+              ) : (
+                <a className="nav-link" href={href} key={href}>
+                  {label}
+                </a>
+              )
+            )}
           </nav>
         </div>
       </header>
@@ -501,135 +530,50 @@ function App() {
               </h1>
 
               <div
+                className="hero-titles"
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'flex-start',
                   gap: '4px',
                   marginTop: '8px',
-                  marginBottom: '0',
                 }}
               >
-                <p
-                  className="hero-professional-title"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'baseline',
-                    gap: '9px',
-                    margin: 0,
-                    background: 'none',
-                    padding: 0,
-                  }}
-                >
-                  <span
-                    aria-hidden="true"
-                    style={{
-                      color: '#2E9B65',
-                      fontSize: '0.8em',
-                      lineHeight: 1,
-                    }}
-                  >
-                    ●
-                  </span>
-                  <span>Public and Environmental Health Professional</span>
+                <p className="hero-professional-title">
+                  <span aria-hidden="true">●</span>
+                  Public and Environmental Health Professional
                 </p>
 
-                <p
-                  className="hero-data-title"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'baseline',
-                    gap: '9px',
-                    margin: 0,
-                    background: 'none',
-                    padding: 0,
-                    color: 'inherit',
-                    fontWeight: 'inherit',
-                    fontSize: 'inherit',
-                  }}
-                >
-                  <span
-                    aria-hidden="true"
-                    style={{
-                      color: '#2E9B65',
-                      fontSize: '0.8em',
-                      lineHeight: 1,
-                    }}
-                  >
-                    ●
-                  </span>
-                  <span>Data Analyst</span>
+                <p className="hero-data-title">
+                  <span aria-hidden="true">●</span>
+                  Data Analyst
                 </p>
               </div>
 
-              {/* Divider separating professional titles from About Me */}
-              <div
-                className="hero-about-divider"
-                aria-hidden="true"
-                style={{
-                  width: '100%',
-                  maxWidth: '520px',
-                  height: '1px',
-                  backgroundColor: '#0d3418',
-                  margin: '24px 0 20px',
-                }}
-              />
+              <div className="hero-about-divider" aria-hidden="true" />
 
-              {/* About Me now appears directly beneath Data Analyst */}
-              <div
-                className="hero-about-content"
-                id="about"
-                style={{
-                  width: '100%',
-                  maxWidth: '520px',
-                  paddingTop: '46px',
-                }}
-              >
-                <h2
-                  style={{
-                    margin: '0 0 12px',
-                    color: '#06263a',
-                    fontFamily: "'Playfair Display', Georgia, serif",
-                    fontSize: 'clamp(22px, 2vw, 28px)',
-                    lineHeight: 1.2,
-                  }}
-                >
-                  About Me 😊
-                </h2>
+              <div className="hero-about-content" id="about">
+                <h2>About Me 😊</h2>
 
-                <p
-                  style={{
-                    margin: '0 0 12px',
-                    color: '#60717a',
-                    fontSize: '14px',
-                    lineHeight: 1.7,
-                  }}
-                >
+                <p>
                   I am a Public and Environmental Health professional from The
                   Gambia, with experience in public health service delivery and
                   programme implementation at district and national levels. I
-                  have been working with the Ministry of Health for over a decade,
-                  contributing to public health activities and environmental
-                  health programmes.
+                  have been working with the Ministry of Health for over a
+                  decade, contributing to public health activities and
+                  environmental health programmes.
                 </p>
 
-                <p
-                  style={{
-                    margin: 0,
-                    color: '#60717a',
-                    fontSize: '14px',
-                    lineHeight: 1.7,
-                  }}
-                >
-                  I am particularly interested in strengthening evidence-informed
-                  decision-making through public and environmental health research.
-                  My goal is to help translate public health data into useful
-                  insights for policies, programmes and practice.
+                <p>
+                  I am particularly interested in strengthening
+                  evidence-informed decision-making through public and
+                  environmental health research. My goal is to help translate
+                  public health data into useful insights for policies,
+                  programmes and practice.
                 </p>
               </div>
 
-              {/* Button now sits beneath the About Me text */}
-              <div className="hero-actions" style={{ marginTop: '12px' }}>
+              <div className="hero-actions">
                 <a className="button button-primary" href="#projects">
                   Explore My Work <span aria-hidden="true">↓</span>
                 </a>
@@ -667,12 +611,10 @@ function App() {
               <FocusIcon type="health" />
               <span>Public Health</span>
             </div>
-
             <div className="focus-item">
               <FocusIcon type="environment" />
               <span>Environment</span>
             </div>
-
             <div className="focus-item">
               <FocusIcon type="analytics" />
               <span>Data Analytics</span>
@@ -692,63 +634,13 @@ function App() {
               {technicalSkills.map((skill) => (
                 <article className="skill-card" key={skill.title}>
                   <h3>{skill.title}</h3>
-
-                  <div
-                    className="skill-tools-list"
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'row',
-                      flexWrap: 'wrap',
-                      alignItems: 'flex-start',
-                      justifyContent: 'flex-start',
-                      gap: '22px',
-                      marginTop: '20px',
-                    }}
-                  >
+                  <div className="skill-tools-list">
                     {skill.tools.map((tool) => (
-                      <div
-                        key={tool.name}
-                        className="skill-tool-item"
-                        title={tool.name}
-                        aria-label={tool.name}
-                        style={{
-                          display: 'inline-flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          justifyContent: 'flex-start',
-                          gap: '9px',
-                          width: '82px',
-                          minHeight: '78px',
-                          textAlign: 'center',
-                        }}
-                      >
-                        <span
-                          style={{
-                            width: '48px',
-                            height: '48px',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            borderRadius: '10px',
-                            backgroundColor: '#F7F9FC',
-                            border: '1px solid #E7EBF0',
-                            boxSizing: 'border-box',
-                          }}
-                        >
+                      <div className="skill-tool-item" key={tool.name}>
+                        <span className="skill-tool-icon">
                           <SkillIcon type={tool.icon} />
                         </span>
-
-                        <span
-                          style={{
-                            fontSize: '13px',
-                            lineHeight: 1.35,
-                            fontWeight: 600,
-                            color: '#344054',
-                            overflowWrap: 'anywhere',
-                          }}
-                        >
-                          {tool.name}
-                        </span>
+                        <span className="skill-tool-name">{tool.name}</span>
                       </div>
                     ))}
                   </div>
@@ -772,7 +664,6 @@ function App() {
                   <div className="experience-marker">
                     <span>{String(index + 1).padStart(2, '0')}</span>
                   </div>
-
                   <div className="experience-content">
                     <div className="experience-heading">
                       <h3>{item.location}</h3>
@@ -780,12 +671,10 @@ function App() {
                         {item.organisation}
                       </span>
                     </div>
-
                     <ul className="experience-list">
                       <li className="experience-description">
                         {item.description}
                       </li>
-
                       {item.responsibilities.map((responsibility) => (
                         <li key={responsibility}>{responsibility}</li>
                       ))}
@@ -814,11 +703,9 @@ function App() {
                     </span>
                     <span className="project-category">SELECTED WORK</span>
                   </div>
-
                   <div className="project-card-content">
                     <h3>{project.title}</h3>
                     <p>{project.description}</p>
-
                     <div className="project-tags">
                       {project.tags.map((tag) => (
                         <span className="project-tag" key={tag}>
@@ -850,7 +737,6 @@ function App() {
                     Explore my research interests, publications and academic
                     contributions through my Google Scholar profile.
                   </p>
-
                   <a
                     className="scholar-link"
                     href="https://scholar.google.com/citations?user=fxgLm1wAAAAJ&hl=en"
@@ -863,7 +749,6 @@ function App() {
 
                 <div className="presentations-block">
                   <h3>Presentations</h3>
-
                   <ul className="presentation-list">
                     {presentations.map((presentation, index) => (
                       <li
@@ -873,7 +758,6 @@ function App() {
                         <span className="presentation-number">
                           {String(index + 1).padStart(2, '0')}
                         </span>
-
                         <div>
                           <h3>{presentation.title}</h3>
                           <p>{presentation.event}</p>
@@ -924,7 +808,6 @@ function App() {
                   <ContactIcon type="email" />
                   <span>Email Me</span>
                 </a>
-
                 <a
                   className="button button-outline"
                   href="tel:+2203710000"
@@ -932,7 +815,6 @@ function App() {
                   <ContactIcon type="phone" />
                   <span>Call Me</span>
                 </a>
-
                 <a
                   className="button button-outline"
                   href="https://www.linkedin.com/feed/foryou/"
@@ -953,7 +835,6 @@ function App() {
           <a className="footer-brand" href="#home">
             SC<span>.</span>
           </a>
-
           <p>© {new Date().getFullYear()} Saikou Camara</p>
           <p>Public Health · Environment · Data analysis</p>
           <a className="back-to-top" href="#home">
