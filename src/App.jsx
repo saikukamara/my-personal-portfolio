@@ -1,4 +1,3 @@
-
 import './App.css';
 
 const experience = [
@@ -703,11 +702,11 @@ function App() {
                   </summary>
 
                   <div className="experience-content">
-                    <p className="experience-description">
-                      {item.description}
-                    </p>
-
                     <ul className="experience-list">
+                      <li className="experience-description">
+                        {item.description}
+                      </li>
+
                       {item.responsibilities.map(
                         (responsibility, responsibilityIndex) => (
                           <li

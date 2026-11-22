@@ -3539,3 +3539,19 @@ img {
   margin-bottom: 10px;
   font-weight: 500;
 }
+/* FIX: Show the opening description as a bullet
+   under every Professional Experience entry */
+
+.experience-list .experience-description {
+  display: list-item !important;
+  list-style-type: disc !important;
+  list-style-position: outside !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.6 !important;
+  font-weight: 700;
+}
+
+.experience-list .experience-description::marker {
+  color: inherit;
+}
