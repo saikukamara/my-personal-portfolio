@@ -134,18 +134,7 @@ const technicalSkills = [
 ];
 
 const projects = [
-  {
-    title: 'Air Pollution and Hospital Admissions in Urban Gambia',
-    description:
-      'Research examining the relationship between air pollution indicators and hospital admissions in an urban Gambian setting.',
-    tags: ['Air Quality', 'Public Health Research', 'Data Analysis'],
-  },
-  {
-    title: 'Household Energy, Air Quality and Waste Survey',
-    description:
-      'A household survey initiative focused on household energy use, air quality and waste-related environmental health information.',
-    tags: ['KoboToolbox', 'Environmental Health', 'Survey Data'],
-  },
+
   {
     title: 'Environmental Health Programme Monitoring',
     description:
@@ -766,7 +755,7 @@ function App() {
             <SectionHeading
               eyebrow="RESEARCH AND KNOWLEDGE SHARING"
               title="Research and Presentations"
-              description="Explore my research profile and selected scientific and professional presentations."
+              description="Explore my research profile and scientific and professional presentations"
             />
 
             <div className="presentations-full-width">
